@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-
+import { v4 as uuidv4 } from 'uuid';
 import { MovieItem } from "../../components/MovieItem";
 import { useStore } from "../../hooks/useStore/useStore";
 import { Spinner } from "../../components/Spinner";
-import { getMovieSearchAsync } from "../../store/movieStore/movieSlice";
+import { getMovieSearchAsync } from "../../store/movieStore/movieReducers";
 
 export const SearchMovie = () => {
   const { dispatch, store } = useStore();
@@ -45,17 +45,29 @@ export const SearchMovie = () => {
       <div className="mb-5 font-exo text-3xl mx-96 mt-24 font-semibold">
         {`Search results ${searchValue}`}
       </div>
-      <div className="grid grid-cols-2 gap-2  md:grid-cols-4 w-9/12 mx-96 mt-12">
-        {movies.map(({ kinopoiskId, ratingKinopoisk, posterUrlPreview, nameRu, genres}) => (
-          <MovieItem
-            key={kinopoiskId}
-            kinopoiskId={kinopoiskId}
-            nameRu={nameRu}
-            ratingKinopoisk={ratingKinopoisk}
-            genres={genres}
-            posterUrlPreview={posterUrlPreview}
-          />
-        ))}
+      <div className="grid grid-cols-2 gap-2  lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12  mx-96 mt-12">
+        {movies.map(
+          ({
+            kinopoiskId,
+            ratingKinopoisk,
+            posterUrlPreview,
+            nameRu,
+            genres,
+            filmId,
+            rating
+          }) => (
+            <MovieItem
+              key={uuidv4()}
+              kinopoiskId={kinopoiskId}
+              filmId={filmId}
+              nameRu={nameRu}
+              ratingKinopoisk={ratingKinopoisk===undefined ? rating : ratingKinopoisk}
+              genres={genres}
+              posterUrlPreview={posterUrlPreview}
+              rating={rating}
+            />
+          )
+        )}
       </div>
     </div>
   );

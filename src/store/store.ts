@@ -1,10 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import authSlice from "./authStore/authSlice";
 import movieTopSlice from "./movieStore/movieSlice";
 import trendMovieSlice from "./trendMovieStore/trendMovieSlice";
 
 const rootReducer = combineReducers({
  movie: movieTopSlice,
  trend: trendMovieSlice,
+ auth: authSlice
 
 });
 

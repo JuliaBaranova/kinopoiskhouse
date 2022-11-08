@@ -1,7 +1,8 @@
 import { IFilm } from "../types/film";
-import mark from "../assets/svg/mark.svg";
+//import mark from "../assets/svg/mark.svg";
 import share from "../assets/svg/share.svg";
 import imdb from "../assets/svg/imdb.svg";
+import { Favorites } from "./Favorites";
 
 export const FilmItem = ({
   kinopoiskId,
@@ -15,11 +16,11 @@ export const FilmItem = ({
   genres,
 }: IFilm) => {
   return (
-    <div key={kinopoiskId} className="flex ml-52  mb-10 gap-20">
+    <div className="flex ml-52  mb-10 gap-20 lg:w-10/12 md:w-7/12 lg:flex-row md:flex-col sm:w-5/12 sm:flex-col">
       <div className="flex flex-col gap-10">
         <img className="rounded-2xl w-60" src={posterUrl} alt="film" />
         <div className="flex w-60 h-14 bg-gray-700 rounded-2xl items-center justify-center gap-14 ">
-          <img className="cursor-pointer"  src={mark} alt="mark" />
+          <Favorites id={kinopoiskId}/>
           <p className=" border-r-2 border-black h-14"></p>
           <img className="cursor-pointer" src={share} alt="share" />
         </div>
@@ -40,7 +41,7 @@ export const FilmItem = ({
             <span className="text-white">{ratingImdb}</span>
           </p>
         </div>
-        <div className="w-9/12">{description}</div>
+        <div className=" md:w-7/12 sm:w-5/12 lg:w-9/12">{description}</div>
         <div className="flex gap-16">
           <span className="text-gray-300">Year</span>
           {year}

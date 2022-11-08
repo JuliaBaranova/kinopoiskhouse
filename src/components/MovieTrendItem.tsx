@@ -11,7 +11,7 @@ export const MovieTrendItem = ({
   genres,
 }: ITrend) => {
   return (
-    <div className="flex flex-col  gap-1 font-exo w-72" key={filmId}>
+    <div className="flex flex-col  gap-1 font-exo w-72">
       <Link to={`${MOVIES}/${filmId}`}>
         <img className="rounded-2xl h-96 " src={posterUrlPreview} alt="card" />
       </Link>

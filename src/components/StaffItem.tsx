@@ -7,10 +7,10 @@ export const StaffItem = ({
   professionKey,
 }: IStaff) => {
   return (
-    <div className="flex flex-col gap-2 font-exo" key={staffId}>
-        <img className="rounded-2xl " src={posterUrl} alt="card" />
-        <p className="text-base font-bold text-white">{nameRu}</p>
-        <p className="text-base font-bold text-white">{professionKey}</p>
+    <div className="flex flex-col gap-2.5 font-exo">
+        <img className="rounded-2xl h-50 " src={posterUrl} alt={nameRu} />
+        <p className="text-base font-normal text-white">{nameRu}</p>
+        <p className="font-normal text-sm text-white">{professionKey}</p>
     </div>
   );
 };

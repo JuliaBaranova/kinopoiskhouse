@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {ITrend} from "../../types/trendMovie"
 import {MOVIE_TREND} from "../../costants/endpoints"
+import { publicAxios } from "../../utils/axios";
 
 interface ITrendMovieSliceInitialState {
     isLoading: boolean;
@@ -16,14 +17,8 @@ interface ITrendMovieSliceInitialState {
     "trend/getMoviesTopAsync",
     async ({currentPage}:{currentPage: number}, { rejectWithValue }) => {
       try {
-        const response = await fetch(`${MOVIE_TREND}&page=${currentPage}`, {
-          method: "GET",
-          headers: {
-            "X-API-KEY": "98bd6b7a-6688-4ee8-a75d-9141521969df",
-            "Content-Type": "application/json",
-          },
-        }).then((res) => res.json());
-        return response.films;
+        const {data} = await publicAxios.get(`${MOVIE_TREND}&page=${currentPage}`)
+        return data.films;
       } catch (error) {
         return rejectWithValue(error);
       }

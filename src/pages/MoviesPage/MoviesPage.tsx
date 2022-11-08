@@ -1,14 +1,14 @@
 import { MovieItem } from "../../components/MovieItem";
 import { useStore } from "../../hooks/useStore/useStore";
-import { getMoviesAsync } from "../../store/movieStore/movieSlice";
-
-import { useEffect, useState } from "react";
+import { getMoviesAsync } from "../../store/movieStore/movieReducers";
 import { Spinner } from "../../components/Spinner";
 import { DropDown } from "../../components/DropDown";
+
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import { Pagination } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../../styles/mui";
-
 
 const sortItems = [
   { id: 1, name: "Rating", value: "RATING" },
@@ -32,7 +32,7 @@ export const MoviesPage = () => {
       dispatch(getMoviesAsync({ order: dropdownValue, currentPage: page }));
     }
   }, [dispatch, page, dropdownValue]);
-
+ 
   if (isLoading) {
     return <Spinner />;
   } else if (error) {
@@ -42,7 +42,6 @@ export const MoviesPage = () => {
       </div>
     );
   }
-  
   return (
     <>
       <div className="mx-96 mt-12">
@@ -53,23 +52,28 @@ export const MoviesPage = () => {
           setDropdownValue={setDropdownValue}
         />
       </div>
-      <div className="grid grid-cols-2 gap-2  md:grid-cols-4 w-9/12 mx-96 mt-10">
+      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12 mx-96 mt-10">
         {movies.map(
           ({
             kinopoiskId,
             ratingKinopoisk,
             posterUrlPreview,
             nameRu,
-            genres,
+            genres, 
+            filmId,
+            rating
           }) => (
-            <MovieItem
-              key={kinopoiskId}
+            <MovieItem 
+              key={uuidv4()}
               kinopoiskId={kinopoiskId}
+              filmId={filmId}
               nameRu={nameRu}
-              ratingKinopoisk={ratingKinopoisk}
+              ratingKinopoisk={ratingKinopoisk===undefined ? rating : ratingKinopoisk}
               genres={genres}
-              posterUrlPreview={posterUrlPreview}                
+              posterUrlPreview={posterUrlPreview} 
+              rating ={rating}
             />
+            
           )
         )}
       </div>
@@ -82,7 +86,7 @@ export const MoviesPage = () => {
               "& button.Mui-selected": { color: "#ff8c00", fontWeight: "bold" },
             }}
             size="large"
-            count={20}
+            count={5}
             page={page}
             onChange={(_, num) => setPage(num)}
             showFirstButton
