@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+#  <p align="center">![id](/public/logo1.jpg) KinopoiskHouse
+___
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## A Kinopoisk website clone ##
+[<img src='https://i.ibb.co/wyyhJcc/imgonline-com-ua-Resize-42-B6-HI9p-W54-HTc.jpg'/>]()
+___
+## Technologies used:
+[<img src='https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white'/>](https://www.typescriptlang.org/) [<img src='https://img.shields.io/badge/React JS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'  />](https://reactjs.org/) [<img src='https://img.shields.io/badge/Redux Toolkit-593D88?style=for-the-badge&logo=redux&logoColor=white'  />](https://redux-toolkit.js.org/) [<img src='https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=61DAFB'  />](https://tailwindcss.com/docs/installation) [<img src='https://img.shields.io/badge/swagger-%2385EA2D.svg?&style=for-the-badge&logo=swagger&logoColor=black'/>](https://kinopoiskapiunofficial.tech/documentation/api/#/)
+___
 
-## Available Scripts
 
-In the project directory, you can run:
+## Getting started
 
-### `npm start`
+```
+git clone https://github.com/JuliaBaranova/kinopoiskhouse.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setting
+ Create a file .env and add the following settings there:
+ ```
+The keys can be obtained from https://firebase.google.com/
+REACT_APP_FIREBASE_API_KEY = 
+REACT_APP_FIREBASE_AUTH_DOMAIN =
+REACT_APP_FIREBASE_PROJECT_ID =
+REACT_APP_FIREBASE_STORAGE_BUCKET =
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID =
+REACT_APP_FIREBASE_APP_ID =
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+REACT_APP_API_KEY="The key can be obtain from  https://kinopoiskapiunofficial.tech/"
+ ```
+ ## Start
+  ```
+  npm start or yarn start
+  ```
+___
+## Pages project
+* [MoviesPage](/src/pages/MoviesPage/MoviesPage.tsx) - this is the main page with movies
+* [FilmIdPage](/src/pages/FilmIdPage/FilmIdPage.tsx) -this is the movie details page
+* [TrendMoviePage](/src/pages/TrendMoviePage/TrendMovie.tsx) - this is a page with the top 100 best movies of the kinopoisk
+* [SearchMoviePage](/src/pages/SearchMoviePage/SearchMovie.tsx) - this is a page with search results for a list of movies by keywords
+* [FavoriteList](/src/pages/FavoriteList/FavoriteList.tsx) -this is a page with favorite movies, available only to authorized users
+* [LoginPage](/src/pages/LoginPage/LoginPage.tsx) - this is the login page, uses a firebase to authenticate the user
+* [RegisterPage](/src/pages/RegisterPage/RegisterPage.tsx) - this is the register page, uses firebase for user registration
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### To create the project, the api https://kinopoiskapiunofficial.tech/ was used.
+##### Methods used: 
+* Getting movie data by movie kinopoisk id.
+* Getting a movie list from various tops and collections.
+* Getting a list of movies by various filters.
+* Getting a list of movies by keywords.
+* Getting data about actors, directors, etc.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
