@@ -1,13 +1,13 @@
-import { useDispatch } from "react-redux";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { Form } from "./Form";
-import { setUser } from "../store/authStore/authSlice";
-import { useNavigate } from "react-router-dom";
-import { HOME } from "../costants/routes";
+import { useDispatch } from "react-redux"
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { Form } from "./Form"
+import { setUser } from "../store/authStore/authSlice"
+import { useNavigate } from "react-router-dom"
+import { HOME } from "../costants/routes"
 
 export const SignUp = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleRegister = (email: string, password: string) => {
     const auth = getAuth();
@@ -20,10 +20,10 @@ export const SignUp = () => {
             token: user.refreshToken,
           })
         );
-        navigate(HOME);
+        navigate(HOME)
       })
-      .catch(console.error);
-  };
+      .catch(console.error)
+  }
 
-  return <Form title="Sign up" handleClick={handleRegister} />;
-};
+  return <Form title="Sign up" handleClick={handleRegister} />
+}

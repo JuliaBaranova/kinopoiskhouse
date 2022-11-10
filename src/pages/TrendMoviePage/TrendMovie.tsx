@@ -1,34 +1,33 @@
-import { MovieTrendItem } from "../../components/MovieTrendItem";
-import { useStore } from "../../hooks/useStore/useStore";
-import { getMovieTopAsync } from "../../store/trendMovieStore/trendMovieSlice";
-import { Spinner } from "../../components/Spinner";
-import { v4 as uuidv4 } from "uuid";
-import { useEffect, useState } from "react";
-import { Pagination } from "@mui/material";
-import { ThemeProvider } from "@emotion/react";
-import { theme } from "../../styles/mui";
+import { MovieTrendItem } from "../../components/MovieTrendItem"
+import { useStore } from "../../hooks/useStore/useStore"
+import { getMovieTopAsync } from "../../store/trendMovieStore/trendMovieSlice"
+import { Spinner } from "../../components/Spinner"
+import { v4 as uuidv4 } from "uuid"
+import { useEffect, useState } from "react"
+import { Pagination } from "@mui/material"
+import { ThemeProvider } from "@emotion/react"
+import { theme } from "../../styles/mui"
+import { ErrorMessage } from "../../components/ErrorMessage"
 
 export const TrendMovie = () => {
-  const { store, dispatch } = useStore();
-  const { trend, isLoading, error } = store.trend;
-  const [page, setPage] = useState(1);
+  const { store, dispatch } = useStore()
+  const { trend, isLoading, error } = store.trend
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
-    dispatch(getMovieTopAsync({ currentPage: page }));
-  }, [dispatch, page]);
+    dispatch(getMovieTopAsync({ currentPage: page }))
+  }, [dispatch, page])
 
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner />
   } else if (error) {
     return (
-      <div className="flex items-center justify-center text-8xl text-red-500 font-bold">
-        Error! Reload page, please!
-      </div>
-    );
+      <ErrorMessage/>
+    )
   }
   return (
     <>
-      <div className="grid grid-cols-2 gap-2  lg:grid-cols-4 lg:w-9/12  md:grid-cols-3 md:w-7/12 sm:grid-cols-1 sm:w-5/12 w-9/12 mx-96 mt-24">
+      <div className="grid grid-cols-2 gap-2  lg:grid-cols-4 lg:w-9/12  md:grid-cols-3 md:w-7/12 sm:grid-cols-1 sm:w-5/12 w-9/12 mx-[21.5rem] mt-10">
         {trend.map(({ filmId, rating, posterUrlPreview, nameRu, genres }) => (
           <MovieTrendItem
             key={uuidv4()}
@@ -40,7 +39,7 @@ export const TrendMovie = () => {
           />
         ))}
       </div>
-      <div className="flex justify-center items-center ml-48 my-16 text-white">
+      <div className="flex justify-center items-center my-16 text-white">
         <ThemeProvider theme={theme}>
           <Pagination
             sx={{
@@ -59,5 +58,5 @@ export const TrendMovie = () => {
         </ThemeProvider>
       </div>
     </>
-  );
-};
+  )
+}

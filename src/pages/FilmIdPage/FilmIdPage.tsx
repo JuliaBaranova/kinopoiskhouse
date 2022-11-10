@@ -1,47 +1,44 @@
-import { FilmItem } from "../../components/FilmItem";
-import { useStore } from "../../hooks/useStore/useStore";
+import { FilmItem } from "../../components/FilmItem"
+import { useStore } from "../../hooks/useStore/useStore"
 import {
   getMovieDetailAsync,
   getMoviesRecAsync,
   getStaffAsync,
-} from "../../store/movieStore/movieReducers";
-import { Spinner } from "../../components/Spinner";
-import { v4 as uuidv4 } from 'uuid';
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { StaffItem } from "../../components/StaffItem";
-import { MoviesRecommend } from "../../components/MoviesRecommend";
-import { BackStep } from "../../components/BackStep";
+} from "../../store/movieStore/movieReducers"
+import { Spinner } from "../../components/Spinner"
+import { v4 as uuidv4 } from "uuid"
+import { useParams } from "react-router-dom"
+import { useEffect } from "react"
+import { StaffItem } from "../../components/StaffItem"
+import { MoviesRecommend } from "../../components/MoviesRecommend"
+import { BackStep } from "../../components/BackStep"
+import { ErrorMessage } from "../../components/ErrorMessage"
 
 export const FilmIdPage = () => {
-  const { filmId } = useParams() as any;
-  const { dispatch, store } = useStore();
-  const { staff, movieDetail, moviesRec, isLoading, error } = store.movie;
+  const { filmId } = useParams() as any
+  const { dispatch, store } = useStore()
+  const { staff, movieDetail, moviesRec, isLoading, error } = store.movie
 
   useEffect(() => {
     dispatch(getMovieDetailAsync(filmId));
-  }, [filmId, dispatch]);
+  }, [filmId, dispatch])
 
   useEffect(() => {
-    dispatch(getStaffAsync(filmId));
-  }, [filmId, dispatch]);
+    dispatch(getStaffAsync(filmId))
+  }, [filmId, dispatch])
 
   useEffect(() => {
-    dispatch(getMoviesRecAsync(filmId));
-  }, [filmId, dispatch]);
+    dispatch(getMoviesRecAsync(filmId))
+  }, [filmId, dispatch])
 
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner />
   } else if (error) {
-    return (
-      <div className="flex items-center justify-center text-8xl  text-red-500 font-bold">
-        Error! Reload page, please!
-      </div>
-    );
+    return <ErrorMessage />
   }
 
   return (
-    <div className="flex flex-col gap-5 ml-96 mt-24">
+    <div className="flex flex-col gap-5 mx-[21.5rem] mt-10">
       <BackStep />
       <div>
         {movieDetail ? (
@@ -94,5 +91,5 @@ export const FilmIdPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

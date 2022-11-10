@@ -1,10 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-import {getMoviesAsync, getMovieDetailAsync, getStaffAsync, getMovieSearchAsync, getMoviesRecAsync} from "./movieReducers"
-import { IMovie } from "../../types/movie";
-import { IFilm } from "../../types/film";
-import { IStaff } from "../../types/staffmovie";
-import { IRecommend } from "../../types/moviesrec";
+import { createSlice } from "@reduxjs/toolkit"
+import {
+  getMoviesAsync,
+  getMovieDetailAsync,
+  getStaffAsync,
+  getMovieSearchAsync,
+  getMoviesRecAsync,
+} from "./movieReducers"
+import { IMovie } from "../../types/movie"
+import { IFilm } from "../../types/film"
+import { IStaff } from "../../types/staffmovie"
+import { IRecommend } from "../../types/moviesrec"
 interface IMovieSliceInitialState {
   isLoading: boolean;
   movies: IMovie[];
@@ -21,8 +26,7 @@ const initialState: IMovieSliceInitialState = {
   staff: [],
   moviesRec: [],
   error: null,
-};
-
+}
 
 const movieTopSlice = createSlice({
   name: "movies",
@@ -85,6 +89,6 @@ const movieTopSlice = createSlice({
       state.error = action.payload;
     },
   },
-});
+})
 
-export default movieTopSlice.reducer;
+export default movieTopSlice.reducer

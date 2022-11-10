@@ -1,6 +1,6 @@
-import { SignUp } from '../../components/SignUp';
-import { Link } from 'react-router-dom';
-import { LOGIN } from '../../costants/routes';
+import { SignUp } from '../../components/SignUp'
+import { Link } from 'react-router-dom'
+import { LOGIN } from '../../costants/routes'
 
 export const RegisterPage = () => {
     return (
@@ -10,8 +10,6 @@ export const RegisterPage = () => {
                 Already have an account? <Link className="underline" to={LOGIN}>Sign in</Link>   
             </p>  
             <SignUp />
-                      
         </div>
     )
 }
-

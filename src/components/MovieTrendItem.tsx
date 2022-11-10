@@ -1,7 +1,6 @@
-import { ITrend } from "../types/trendMovie";
-
-import { Link } from "react-router-dom";
-import { MOVIES } from "../costants/routes";
+import { ITrend } from "../types/trendMovie"
+import { Link } from "react-router-dom"
+import { MOVIES } from "../costants/routes"
 
 export const MovieTrendItem = ({
   filmId,
@@ -11,7 +10,7 @@ export const MovieTrendItem = ({
   genres,
 }: ITrend) => {
   return (
-    <div className="flex flex-col  gap-1 font-exo w-72">
+    <div key={filmId} className="flex flex-col  gap-1 font-exo w-72">
       <Link to={`${MOVIES}/${filmId}`}>
         <img className="rounded-2xl h-96 " src={posterUrlPreview} alt="card" />
       </Link>
@@ -25,12 +24,12 @@ export const MovieTrendItem = ({
         {nameRu}
       </Link>
       <div className="flex gap-4 flex-row ">
-        {genres.slice(0, 2).map((genre) => (
-          <p className="font-medium text-base  text-gray-400 ">
+        {genres.slice(0, 2).map((genre, index) => (
+          <p key={index} className="font-medium text-base  text-gray-400 ">
             {genre.genre.charAt(0).toUpperCase() + genre.genre.slice(1)}
           </p>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

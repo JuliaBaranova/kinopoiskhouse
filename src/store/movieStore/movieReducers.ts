@@ -1,7 +1,6 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-
-import { MOVIES, SEARCH, MOVIES_STAFF } from "../../costants/endpoints";
-import { publicAxios } from "../../utils/axios";
+import { createAsyncThunk } from "@reduxjs/toolkit"
+import { MOVIES, SEARCH, MOVIES_STAFF } from "../../costants/endpoints"
+import { publicAxios } from "../../utils/axios"
 
 export const getMoviesAsync = createAsyncThunk(
   "movie/getMovieAsync",
@@ -20,7 +19,8 @@ export const getMoviesAsync = createAsyncThunk(
       return rejectWithValue(error);
     }
   }
-);
+)
+
 export const getMovieSearchAsync = createAsyncThunk(
   "movies/getMovieSearchAsync",
   async ({ search }: { search: string }, { rejectWithValue }) => {
@@ -33,7 +33,7 @@ export const getMovieSearchAsync = createAsyncThunk(
       return rejectWithValue(error);
     }
   }
-);
+)
 
 export const getMovieDetailAsync = createAsyncThunk(
   "movies/MovieDetailAsync",
@@ -45,7 +45,8 @@ export const getMovieDetailAsync = createAsyncThunk(
       return rejectWithValue(error);
     }
   }
-);
+)
+
 export const getStaffAsync = createAsyncThunk(
   "movies/getStaffAsync",
   async (filmId: number, { rejectWithValue }) => {
@@ -56,7 +57,8 @@ export const getStaffAsync = createAsyncThunk(
       return rejectWithValue(error);
     }
   }
-);
+)
+
 export const getMoviesRecAsync = createAsyncThunk(
   "movies/getMoviesRecAsync",
   async (filmId: number, { rejectWithValue }) => {
@@ -67,4 +69,4 @@ export const getMoviesRecAsync = createAsyncThunk(
       return rejectWithValue(error);
     }
   }
-);
+)

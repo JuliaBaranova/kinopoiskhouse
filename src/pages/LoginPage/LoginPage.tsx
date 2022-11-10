@@ -1,7 +1,6 @@
-import { Login } from "../../components/Login";
-import { Link } from "react-router-dom";
-import { REGISTER } from "../../costants/routes";
-
+import { Login } from "../../components/Login"
+import { Link } from "react-router-dom"
+import { REGISTER } from "../../costants/routes"
 
 export const LoginPage = () => {
   return (
@@ -12,5 +11,5 @@ export const LoginPage = () => {
       </p>
       <Login />
       </div>
-  );
-};
+  )
+}

@@ -41,6 +41,7 @@ ___
 * [FavoriteList](/src/pages/FavoriteList/FavoriteList.tsx) -this is a page with favorite movies, available only to authorized users
 * [LoginPage](/src/pages/LoginPage/LoginPage.tsx) - this is the login page, uses a firebase to authenticate the user
 * [RegisterPage](/src/pages/RegisterPage/RegisterPage.tsx) - this is the register page, uses firebase for user registration
+* [NotFound](/src/pages/NotFound/NotFound.tsx) - this is a landing page that tells your site viewers the requested page is unavailable or, in some cases, doesn't exist. 
 
 
 #### To create the project, the api https://kinopoiskapiunofficial.tech/ was used.

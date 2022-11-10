@@ -1,17 +1,16 @@
-import { FC, useState } from "react";
-
+import { FC, useState } from "react"
 interface FormProps {
-  title: string;
-  handleClick: (email: string, pass: string) => void;
+  title: string,
+  handleClick: (email: string, pass: string) => void
 }
 
-const Form: FC<FormProps> = ({ title, handleClick }) => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+export const Form: FC<FormProps> = ({ title, handleClick }) => {
+  const [email, setEmail] = useState("")
+  const [pass, setPass] = useState("")
   const handleSubmit = (e: any) => {
     e.preventDefault();
-  };
-  
+  }
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -38,7 +37,5 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
         {title}
       </button>
     </form>
-  );
-};
-
-export { Form };
+  )
+}

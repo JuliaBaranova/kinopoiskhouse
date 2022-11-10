@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { IRecommend } from "../types/moviesrec";
-import { MOVIES } from "../costants/routes";
+import { Link } from "react-router-dom"
+import { IRecommend } from "../types/moviesrec"
+import { MOVIES } from "../costants/routes"
 
 export const MoviesRecommend = ({
   filmId,
@@ -18,5 +18,5 @@ export const MoviesRecommend = ({
         <p className="text-lg font-normal text-white">{nameRu}</p>
       </Link>
     </div>
-  );
-};
+  )
+}

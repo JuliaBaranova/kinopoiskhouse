@@ -1,9 +1,7 @@
-import { MainRoutes } from "./routes/MainRoutes";
-
-import { Provider } from "react-redux";
-import store from "./store/store";
-
-import "./index.css";
+import { MainRoutes } from "./routes/MainRoutes"
+import { Provider } from "react-redux"
+import store from "./store/store"
+import "./index.css"
 
 function App() {
   return (
@@ -13,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

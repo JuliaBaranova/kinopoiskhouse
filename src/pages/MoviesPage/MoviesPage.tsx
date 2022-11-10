@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Pagination } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../../styles/mui";
+import { ErrorMessage } from "../../components/ErrorMessage";
 
 const sortItems = [
   { id: 1, name: "Rating", value: "RATING" },
@@ -37,14 +38,12 @@ export const MoviesPage = () => {
     return <Spinner />;
   } else if (error) {
     return (
-      <div className="flex items-center justify-center text-8xl text-red-500 font-bold">
-        Error! Reload page, please!
-      </div>
+      <ErrorMessage/>
     );
   }
   return (
     <>
-      <div className="mx-96 mt-12">
+      <div className="mt-5 mx-[21.5rem]">
         <DropDown
           title="Sort by"
           items={sortItems}
@@ -52,7 +51,7 @@ export const MoviesPage = () => {
           setDropdownValue={setDropdownValue}
         />
       </div>
-      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12 mx-96 mt-10">
+      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12 mx-[21.5rem] mt-10">
         {movies.map(
           ({
             kinopoiskId,

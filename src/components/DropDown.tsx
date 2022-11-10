@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { DropdownArrow } from "./Icons/DropDownArrow";
-import { IDrop } from "../types/dropdown";
+import { useState } from "react"
+import { DropdownArrow } from "./Icons/DropDownArrow"
+import { IDrop } from "../types/dropdown"
 
 export const DropDown = ({
   title,
@@ -8,7 +8,7 @@ export const DropDown = ({
   dropdownValue,
   setDropdownValue,
 }: IDrop) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div>
@@ -66,5 +66,5 @@ export const DropDown = ({
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}

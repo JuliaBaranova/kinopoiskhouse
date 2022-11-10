@@ -1,27 +1,26 @@
-import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { MOVIE_SEARCH } from "../costants/routes";
+import { useState } from "react"
+import { useNavigate, useSearchParams } from "react-router-dom"
+import { MOVIE_SEARCH } from "../costants/routes"
 
 export const Search = () => {
-  const navigate = useNavigate();
-  const [params] = useSearchParams();
-
-  const [searchValue, setSearchValue] = useState(params.get("value") || "");
+  const navigate = useNavigate()
+  const [params] = useSearchParams()
+  const [searchValue, setSearchValue] = useState(params.get("value") || "")
 
   const onSearch = (e: any) => {
     setSearchValue(e.target.value);
-  };
+  }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
     searchValue && navigate(`${MOVIE_SEARCH}/?value=${searchValue}`);
-  };
+  }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-[85rem] mb-5 flex items-center justify-between"
+      className="w-[85rem] flex items-center justify-between"
     >
       <input
         className="placeholder:text-xl  block bg-gray-700 w-full border-2 border-slate-300  text-white rounded-l-lg rounded-l-l
@@ -34,5 +33,5 @@ export const Search = () => {
         Search
       </button>
     </form>
-  );
-};
+  )
+}
