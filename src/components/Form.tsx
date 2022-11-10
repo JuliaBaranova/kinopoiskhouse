@@ -1,15 +1,15 @@
 import { FC, useState } from "react"
 interface FormProps {
-  title: string,
-  handleClick: (email: string, pass: string) => void
+  title: string;
+  handleClick: (email: string, pass: string) => void;
 }
 
 export const Form: FC<FormProps> = ({ title, handleClick }) => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
   const handleSubmit = (e: any) => {
-    e.preventDefault();
-  }
+    e.preventDefault()
+  };
 
   return (
     <form

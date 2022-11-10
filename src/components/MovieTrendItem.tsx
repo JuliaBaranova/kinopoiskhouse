@@ -12,7 +12,7 @@ export const MovieTrendItem = ({
   return (
     <div key={filmId} className="flex flex-col  gap-1 font-exo w-72">
       <Link to={`${MOVIES}/${filmId}`}>
-        <img className="rounded-2xl h-96 " src={posterUrlPreview} alt="card" />
+        <img src={posterUrlPreview} className="rounded-2xl h-96 "  alt="card" />
       </Link>
       <p className="bg-green-500 m-2.5 text-white py-0.5 px-2.5 absolute text-base font-semibold rounded-2xl">
         {rating}

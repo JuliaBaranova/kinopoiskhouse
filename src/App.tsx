@@ -8,7 +8,7 @@ function App() {
     <Provider store={store}>
       <MainRoutes />
     </Provider>
-  );
+  )
 }
 
 export default App

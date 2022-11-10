@@ -4,9 +4,9 @@ import { MOVIE_TREND } from "../../costants/endpoints"
 import { publicAxios } from "../../utils/axios"
 
 interface ITrendMovieSliceInitialState {
-  isLoading: boolean;
-  trend: ITrend[];
-  error: any;
+  isLoading: boolean,
+  trend: ITrend[],
+  error: any,
 }
 
 const initialState: ITrendMovieSliceInitialState = {

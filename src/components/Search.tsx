@@ -1,5 +1,5 @@
-import { useState } from "react"
 import { useNavigate, useSearchParams } from "react-router-dom"
+import { useState } from "react"
 import { MOVIE_SEARCH } from "../costants/routes"
 
 export const Search = () => {

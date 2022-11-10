@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import favorite from "../assets/svg/favorite.svg"
 import home from "../assets/svg/home.svg"
 import trends from "../assets/svg/trends.svg"
+import favorite from "../assets/svg/favorite.svg"
 import { FAVORITE_LIST, HOME, TRENDS } from "../costants/routes"
 
 export const SideBar = () => {

@@ -4,9 +4,9 @@ import movieTopSlice from "./movieStore/movieSlice"
 import trendMovieSlice from "./trendMovieStore/trendMovieSlice"
 
 const rootReducer = combineReducers({
+  auth: authSlice,
   movie: movieTopSlice,
   trend: trendMovieSlice,
-  auth: authSlice,
 })
 
 const store = configureStore({

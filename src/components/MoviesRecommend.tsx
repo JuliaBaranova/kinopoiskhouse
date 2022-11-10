@@ -11,8 +11,8 @@ export const MoviesRecommend = ({
     <div className="flex flex-col gap-4 font-exo">
       <Link to={`${MOVIES}/${filmId}`}>
         <img
-          className="rounded-2xl bg-contain mb-2.5"
           src={posterUrlPreview}
+          className="rounded-2xl bg-contain mb-2.5"
           alt={nameRu}
         />
         <p className="text-lg font-normal text-white">{nameRu}</p>

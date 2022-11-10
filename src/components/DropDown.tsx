@@ -9,7 +9,6 @@ export const DropDown = ({
   setDropdownValue,
 }: IDrop) => {
   const [isOpen, setIsOpen] = useState(false)
-
   return (
     <div>
       <button

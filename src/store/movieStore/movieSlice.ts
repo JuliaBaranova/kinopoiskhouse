@@ -1,4 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { IMovie } from "../../types/movie"
+import { IFilm } from "../../types/film"
+import { IStaff } from "../../types/staffmovie"
+import { IRecommend } from "../../types/moviesrec"
 import {
   getMoviesAsync,
   getMovieDetailAsync,
@@ -6,10 +10,7 @@ import {
   getMovieSearchAsync,
   getMoviesRecAsync,
 } from "./movieReducers"
-import { IMovie } from "../../types/movie"
-import { IFilm } from "../../types/film"
-import { IStaff } from "../../types/staffmovie"
-import { IRecommend } from "../../types/moviesrec"
+
 interface IMovieSliceInitialState {
   isLoading: boolean;
   movies: IMovie[];

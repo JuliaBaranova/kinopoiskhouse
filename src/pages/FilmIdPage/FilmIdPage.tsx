@@ -1,14 +1,14 @@
-import { FilmItem } from "../../components/FilmItem"
 import { useStore } from "../../hooks/useStore/useStore"
+import { useParams } from "react-router-dom"
+import { useEffect } from "react"
+import { v4 as uuidv4 } from "uuid"
+import { FilmItem } from "../../components/FilmItem"
 import {
   getMovieDetailAsync,
   getMoviesRecAsync,
   getStaffAsync,
 } from "../../store/movieStore/movieReducers"
 import { Spinner } from "../../components/Spinner"
-import { v4 as uuidv4 } from "uuid"
-import { useParams } from "react-router-dom"
-import { useEffect } from "react"
 import { StaffItem } from "../../components/StaffItem"
 import { MoviesRecommend } from "../../components/MoviesRecommend"
 import { BackStep } from "../../components/BackStep"

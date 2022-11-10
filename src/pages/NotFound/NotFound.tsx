@@ -1,9 +1,9 @@
-import notfound from "../../assets/svg/notfound.svg"
+import notfound from "../../assets/svg/notfound.svg";
 
 export const NotFound = () => {
   return (
     <section>
-      <div className="bg-black text-white">
+      <div className="text-white bg-black ">
         <div className="flex h-screen">
           <div className="m-auto text-center">
             <div>
@@ -22,5 +22,5 @@ export const NotFound = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

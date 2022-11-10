@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux"
 import { AppStateType } from "../../store/store"
+import { useSelector } from "react-redux"
 
 export const useAuth = () => {
   const { email, token, id } = useSelector((store: AppStateType) => store.auth)

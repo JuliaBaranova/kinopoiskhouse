@@ -1,12 +1,12 @@
-import { MovieTrendItem } from "../../components/MovieTrendItem"
-import { useStore } from "../../hooks/useStore/useStore"
-import { getMovieTopAsync } from "../../store/trendMovieStore/trendMovieSlice"
-import { Spinner } from "../../components/Spinner"
-import { v4 as uuidv4 } from "uuid"
 import { useEffect, useState } from "react"
+import { useStore } from "../../hooks/useStore/useStore"
+import { v4 as uuidv4 } from "uuid"
 import { Pagination } from "@mui/material"
 import { ThemeProvider } from "@emotion/react"
 import { theme } from "../../styles/mui"
+import { MovieTrendItem } from "../../components/MovieTrendItem"
+import { getMovieTopAsync } from "../../store/trendMovieStore/trendMovieSlice"
+import { Spinner } from "../../components/Spinner"
 import { ErrorMessage } from "../../components/ErrorMessage"
 
 export const TrendMovie = () => {

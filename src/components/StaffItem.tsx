@@ -8,7 +8,7 @@ export const StaffItem = ({
 }: IStaff) => {
   return (
     <div key={staffId} className="flex flex-col gap-2.5 font-exo">
-        <img className="rounded-2xl h-50 " src={posterUrl} alt={nameRu} />
+        <img src={posterUrl} className="rounded-2xl h-50" alt={nameRu} />
         <p className="text-base font-normal text-white">{nameRu}</p>
         <p className="font-normal text-sm text-white">{professionKey}</p>
     </div>

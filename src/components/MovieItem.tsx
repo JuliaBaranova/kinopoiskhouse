@@ -10,6 +10,7 @@ export const MovieItem = ({
   genres,
   filmId,
 }: IMovie) => {
+
   return (
     <div key={kinopoiskId} className="flex flex-col  gap-1 font-exo w-72">
       <Link

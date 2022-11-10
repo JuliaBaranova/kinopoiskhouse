@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { MOVIES, SEARCH, MOVIES_STAFF } from "../../costants/endpoints"
 import { publicAxios } from "../../utils/axios"
+import { MOVIES, SEARCH, MOVIES_STAFF } from "../../costants/endpoints"
 
 export const getMoviesAsync = createAsyncThunk(
   "movie/getMovieAsync",

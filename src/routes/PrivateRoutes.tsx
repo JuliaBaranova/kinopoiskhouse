@@ -8,7 +8,6 @@ type Props ={
 
 export const PrivateRoute = ({ children}: Props) => {
   const {isAuth} = useAuth()
-
   if (!isAuth) {
     return <Navigate to={LOGIN} />
   }

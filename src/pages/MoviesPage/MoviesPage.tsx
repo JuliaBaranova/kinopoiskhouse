@@ -1,45 +1,44 @@
-import { MovieItem } from "../../components/MovieItem";
-import { useStore } from "../../hooks/useStore/useStore";
-import { getMoviesAsync } from "../../store/movieStore/movieReducers";
-import { Spinner } from "../../components/Spinner";
-import { DropDown } from "../../components/DropDown";
-
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
-import { Pagination } from "@mui/material";
-import { ThemeProvider } from "@emotion/react";
-import { theme } from "../../styles/mui";
-import { ErrorMessage } from "../../components/ErrorMessage";
+import { useStore } from "../../hooks/useStore/useStore"
+import { useEffect, useState } from "react"
+import { v4 as uuidv4 } from 'uuid'
+import { Pagination } from "@mui/material"
+import { ThemeProvider } from "@emotion/react"
+import { theme } from "../../styles/mui"
+import { MovieItem } from "../../components/MovieItem"
+import { getMoviesAsync } from "../../store/movieStore/movieReducers"
+import { Spinner } from "../../components/Spinner"
+import { DropDown } from "../../components/DropDown"
+import { ErrorMessage } from "../../components/ErrorMessage"
 
 const sortItems = [
   { id: 1, name: "Rating", value: "RATING" },
   { id: 2, name: "Number of assessments", value: "NUM_VOTE" },
   { id: 3, name: "Year", value: "YEAR" },
-];
+]
 
 export const MoviesPage = () => {
-  const { store, dispatch } = useStore();
-  const { movies, isLoading, error } = store.movie;
+  const { store, dispatch } = useStore()
+  const { movies, isLoading, error } = store.movie
 
-  const [dropdownValue, setDropdownValue] = useState(sortItems[1].value);
-  const [page, setPage] = useState(1);
+  const [dropdownValue, setDropdownValue] = useState(sortItems[1].value)
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
-    dispatch(getMoviesAsync({ order: dropdownValue, currentPage: page }));
-  }, [dispatch]);
+    dispatch(getMoviesAsync({ order: dropdownValue, currentPage: page }))
+  }, [dispatch])
 
   useEffect(() => {
     if (page !== 0) {
-      dispatch(getMoviesAsync({ order: dropdownValue, currentPage: page }));
+      dispatch(getMoviesAsync({ order: dropdownValue, currentPage: page }))
     }
-  }, [dispatch, page, dropdownValue]);
+  }, [dispatch, page, dropdownValue])
  
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner />
   } else if (error) {
     return (
       <ErrorMessage/>
-    );
+    )
   }
   return (
     <>
@@ -95,5 +94,5 @@ export const MoviesPage = () => {
         </ThemeProvider>
       </div>
     </>
-  );
-};
+  )
+}

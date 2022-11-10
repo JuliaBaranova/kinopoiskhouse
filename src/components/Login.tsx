@@ -1,8 +1,8 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
-import { Form } from "./Form"
-import { setUser } from "../store/authStore/authSlice"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { Form } from "./Form"
+import { setUser } from "../store/authStore/authSlice"
 import { HOME } from "../costants/routes"
 
 export const Login = () => {
@@ -20,10 +20,10 @@ export const Login = () => {
             token: user.refreshToken,
           })
         );
-        navigate(HOME)
+        navigate(HOME);
       })
       .catch(() => alert("Invalid user!"))
-  }
+  };
 
   return <Form title="Sign in" handleClick={handleLogin} />
 }

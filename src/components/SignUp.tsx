@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 import { Form } from "./Form"
 import { setUser } from "../store/authStore/authSlice"
-import { useNavigate } from "react-router-dom"
 import { HOME } from "../costants/routes"
 
 export const SignUp = () => {

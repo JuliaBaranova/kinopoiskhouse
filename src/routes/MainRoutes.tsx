@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { PrivateRoute } from "./PrivateRoutes"
+import { Layout } from "../layouts/Layout"
 import {
   FAVORITE_LIST,
   HOME,
@@ -9,7 +11,6 @@ import {
   REGISTER,
   TRENDS,
 } from "../costants/routes"
-import { Layout } from "../layouts/Layout"
 import {
   FavoriteList,
   FilmIdPage,
@@ -20,7 +21,7 @@ import {
   SearchMovie,
   TrendMovie,
 } from "../pages"
-import { PrivateRoute } from "./PrivateRoutes"
+
 
 export const MainRoutes = () => {
   return (
