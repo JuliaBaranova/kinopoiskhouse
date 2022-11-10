@@ -1,12 +1,11 @@
 #  <p align="center">![id](/public/logo1.jpg) KinopoiskHouse
-___
 
 ## A Kinopoisk website clone ##
 [<img src='https://i.ibb.co/wyyhJcc/imgonline-com-ua-Resize-42-B6-HI9p-W54-HTc.jpg'/>]()
-___
+
 ## Technologies used:
 [<img src='https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white'/>](https://www.typescriptlang.org/) [<img src='https://img.shields.io/badge/React JS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'  />](https://reactjs.org/) [<img src='https://img.shields.io/badge/Redux Toolkit-593D88?style=for-the-badge&logo=redux&logoColor=white'  />](https://redux-toolkit.js.org/) [<img src='https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=61DAFB'  />](https://tailwindcss.com/docs/installation) [<img src='https://img.shields.io/badge/swagger-%2385EA2D.svg?&style=for-the-badge&logo=swagger&logoColor=black'/>](https://kinopoiskapiunofficial.tech/documentation/api/#/)
-___
+
 
 
 ## Getting started
@@ -32,7 +31,7 @@ REACT_APP_API_KEY="The key can be obtain from  https://kinopoiskapiunofficial.te
   ```
   npm start or yarn start
   ```
-___
+
 ## Pages project
 * [MoviesPage](/src/pages/MoviesPage/MoviesPage.tsx) - this is the main page with movies
 * [FilmIdPage](/src/pages/FilmIdPage/FilmIdPage.tsx) -this is the movie details page
