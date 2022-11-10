@@ -8,17 +8,17 @@ export const SideBar = () => {
   return (
     <div>
       <div className="flex fixed flex-col gap-5 px-8 py-8 cursor-pointer">
-        <Link className="flex gap-5" to={HOME}>
+        <Link className="flex gap-5 " to={HOME}>
           <img src={home} alt="home" />
-          <span className="text-gray-500 font-semibold text-lg">Home</span>
+          <span className="text-gray-500 font-semibold text-lg hover:text-orange-600 visited:text-orange-600  focus:text-orange-600">Home</span>
         </Link>
         <Link className="flex gap-5" to={TRENDS}>
           <img src={trends} alt="trend" />
-          <span className="text-gray-500 font-semibold text-lg">Trends</span>
+          <span className="text-gray-500 font-semibold text-lg  hover:text-orange-600 visited:text-orange-600  focus:text-orange-600">Trends</span>
         </Link>
         <Link className="flex gap-5" to={FAVORITE_LIST}>
           <img src={favorite} alt="favorite" />
-          <span className="text-gray-500 font-semibold text-lg">Favorites</span>
+          <span className="text-gray-500 font-semibold text-lg  hover:text-orange-600 visited:text-orange-600  focus:text-orange-600">Favorites</span>
         </Link>
       </div>
     </div>
