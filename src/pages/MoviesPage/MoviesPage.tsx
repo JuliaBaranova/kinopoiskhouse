@@ -42,7 +42,7 @@ export const MoviesPage = () => {
   }
   return (
     <>
-      <div className="mt-5 mx-[21.5rem]">
+      <div className="mt-12 mx-[20.5rem]">
         <DropDown
           title="Sort by"
           items={sortItems}
@@ -50,7 +50,7 @@ export const MoviesPage = () => {
           setDropdownValue={setDropdownValue}
         />
       </div>
-      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12 mx-[21.5rem] mt-10">
+      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12 mx-[20.5rem] mt-5">
         {movies.map(
           ({
             kinopoiskId,

@@ -14,9 +14,9 @@ export const Header = () => {
 
   return (
     <>
-      <div className="sticky h-16 top-0 z-50">
+      <div className="flex flex-col mt-5 mb-10 w-40 relative">
         <nav className="border-black-200 px-4 lg:px-6 py-2.5 dark:bg-black">
-          <div className="flex items-center justify-center space-x-8">
+          <div className="flex mb-5 gap-5 fixed">
             <Logo />
             <Search />
             <div className="flex ml-2 font-exo">
@@ -41,8 +41,11 @@ export const Header = () => {
             </div>
           </div>
         </nav>
-      </div>
+      
+      <div className="flex flex-col gap-5 mt-24 ml-8 cursor-pointer fixed">
       <SideBar />
+      </div>
+      </div>
     </>
   )
 }

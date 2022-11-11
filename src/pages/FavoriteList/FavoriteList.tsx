@@ -36,7 +36,7 @@ export const FavoriteList = () => {
     return <ErrorMessage />
   }
   return (
-    <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12 mx-[21.5rem] mt-10">
+    <div className="grid grid-cols-2 gap-2 lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12 mx-[20.5rem] mt-20">
       {movies.length === 0 ? (
         <div>No favorites movies</div>
       ) : (

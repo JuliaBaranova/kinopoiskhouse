@@ -38,7 +38,7 @@ export const FilmIdPage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-5 mx-[21.5rem] mt-10">
+    <div className="flex flex-col gap-5 mx-[20.5rem] mt-24">
       <BackStep />
       <div>
         {movieDetail ? (

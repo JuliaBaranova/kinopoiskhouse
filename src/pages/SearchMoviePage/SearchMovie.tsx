@@ -37,10 +37,10 @@ export const SearchMovie = () => {
 
   return (
     <div>
-      <div className="mb-5 font-exo text-3xl mx-[21.5rem] mt-8 font-semibold">
+      <div className="mb-5 font-exo text-3xl mx-[20.5rem] mt-20 font-semibold">
         {`Search results ${searchValue}`}
       </div>
-      <div className="grid grid-cols-2 gap-2  lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12  mx-[21.5rem] mt-10">
+      <div className="grid grid-cols-2 gap-2  lg:grid-cols-4 lg:w-9/12  md:grid-cols-2 md:w-7/12 sm:grid-cols-1 sm:w-5/12  mx-[20.5rem] mt-8">
         {movies.map(
           ({
             kinopoiskId,
