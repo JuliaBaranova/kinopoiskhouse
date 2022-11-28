@@ -2,7 +2,7 @@
 
 ## A Kinopoisk website clone
 
-[<img src='https://i.ibb.co/wyyhJcc/imgonline-com-ua-Resize-42-B6-HI9p-W54-HTc.jpg'/>]()
+[<img src='https://i.ibb.co/wyyhJcc/imgonline-com-ua-Resize-42-B6-HI9p-W54-HTc.jpg' />]()
 
 ## Technologies used:
 
